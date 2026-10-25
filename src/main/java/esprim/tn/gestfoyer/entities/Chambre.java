@@ -1,14 +1,17 @@
 package esprim.tn.gestfoyer.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 public class Chambre {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private Long idChambre;
     private Long numeroChambre;
+    @Enumerated(EnumType.STRING)
+    private TypeChambre typeChambre ;
 }
